@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alif Vagetables</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="produk/Kangkung.jpg" />
+</head>
+<body>
+
+  <div class="topbar">
+    <span>📞 +6281268607039 </span>
+    <span>✉️ alifintang14@email.com</span>
+    <span>🚚 Solok Dan Sekitarnya </span>
+  </div>
+
+  <header class="main-header">
+    <div class="overlay">
+      <h1 class="hero-text">Rasakan Kesegaran Alami dari Sayuran Organik Pilihan</h1>
+      <p class="subtext">Langsung dari petani lokal ke meja makan Anda</p>
+      <a href="#order-form" class="btn">Pesan Sekarang</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <!-- <img src="bg1.jpg" alt="Sayuran Segar"> -->
+    <div class="cta">
+      <h2>Belanja Sayur Hari Ini!</h2>
+      <p>Dua tiga kangkung di bawah matahari,</p>
+      <p>Mau hidup sehat? Mulailah dari kini.</p>
+      
+      
+      <a href="#order-form" class="btn">Pesan Sekarang</a>
+    </div>
+  </section>
+
+  <section class="testimoni">
+    <h2>Testimoni Pelanggan</h2>
+    <blockquote>"Sayurannya segar banget, anak saya jadi doyan sayur!" - Ibu Lina</blockquote>
+    <blockquote>"Langganan tiap minggu! Layanan cepat dan ramah." - Pak Andi</blockquote>
+  </section>
+
+<section class="benefits">
+  <h2 style="text-align: center; color: #4caf50;">Produk Kami</h2>
+  <p style="text-align: center; margin-bottom: 2rem;">Fresh. Lokal. Organik. Semua yang Anda butuhkan, kami sediakan di sini.</p>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+
+    <!-- Produk 1 -->
+    <div class="product-card" data-product="1 Ikat Bayam">
+      <div style="position: relative;">
+        <img src="produk/Bayam.jpg" alt="Bayam" style="width: 100%; border-radius: 10px;">
+        <span class="discount-badge">30%</span>
+      </div>
+      <h4>Bayam</h4>
+      <p style="text-decoration: line-through; color: grey;">Rp5.000</p>
+      <p style="color: #4caf50;">Rp3.500</p>
+    </div>
+
+    <!-- Produk 2 -->
+    <div class="product-card" data-product="1 Ikat kangkung">
+      <img src="produk/Kangkung.jpg" alt="kangkung" style="width: 100%; border-radius: 10px;">
+      <h4>kangkung</h4>
+      <p style="color: #4caf50;">Rp4.000</p>
+    </div>
+
+    <!-- Produk 3 -->
+    <div class="product-card" data-product="1Kg Terong">
+      <img src="produk/Terong.jpg" alt="Terong" style="width: 100%; border-radius: 10px;">
+      <h4>Terong</h4>
+      <p style="color: #4caf50;">Rp13.000</p>
+    </div>
+
+    <!-- Produk 4 -->
+    <div class="product-card" data-product="1Kg Rawit">
+      <img src="produk/Rawit.jpg" alt="Rawit" style="width: 100%; border-radius: 10px;">
+      <h4>Rawit</h4>
+      <p style="color: #4caf50;">Rp30.000</p>
+    </div>
+
+    <!-- Produk 5 -->
+    <div class="product-card" data-product="1Kg Tomat">
+      <img src="produk/Tomato.jpg" alt="Tomat" style="width: 100%; border-radius: 10px;">
+      <h4>Tomat</h4>
+      <p style="color: #4caf50;">Rp18.000</p>
+    </div>
+
+  </div>
+</section>
+
+    <section class="form-section" id="order-form">
+    <h2>Formulir Pemesanan (Via Whatsapp)</h2>
+    <form id="wa-form">
+        <input type="text" id="nama" placeholder="Nama Lengkap" required>
+        <input type="email" id="email" placeholder="Email Anda" required>
+        <input type="tel" id="telepon" placeholder="Nomor Telepon" required>
+        <input type="alamat" id="alamat" placeholder="Alamat Anda" required>
+        <textarea id="pesanan" placeholder="Pesanan Anda (contoh: 1kg Bayam, 1kg Wortel)" required></textarea>
+        <button type="submit">Kirim Pesanan</button>
+    </form>
+    </section>
+
+  
+  <footer>
+    <p>&copy; 2025 Sayur Segar. Semua Hak Dilindungi.</p>
+  </footer>
+
+
+  <script>
+    // Event Form Kirim ke WhatsApp
+    document.getElementById("wa-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nama = document.getElementById("nama").value;
+    const email = document.getElementById("email").value;
+    const telepon = document.getElementById("telepon").value;
+    const alamat = document.getElementById("alamat").value;
+    const pesanan = document.getElementById("pesanan").value;
+
+    const pesan = `Halo, saya ingin memesan:\n\nNama: ${nama}\nEmail: ${email}\nTelepon: ${telepon}\nAlamat: ${alamat}\nPesanan: ${pesanan}`;
+    const nomorWhatsApp = "+6281268607039";
+    const url = `https://wa.me/${nomorWhatsApp}?text=${encodeURIComponent(pesan)}`;
+
+    window.open(url, '_blank');
+    });
+
+    // Ganti gambar background otomatis
+    const images = ["bg1.jpg", "bg2.jpg", "bg3.jpg"];
+    let index = 0;
+    const header = document.querySelector(".main-header");
+
+    function changeBackground() {
+    header.style.backgroundImage = `url('${images[index]}')`;
+    index = (index + 1) % images.length;
+    }
+    changeBackground();
+    setInterval(changeBackground, 4000);
+
+    // ✨ Event Klik Produk → Tambah ke Pesanan
+    document.querySelectorAll('.product-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const product = card.getAttribute('data-product');
+        const textarea = document.getElementById('pesanan');
+        if (!textarea.value.includes(product)) {
+        textarea.value += (textarea.value ? '\n' : '') + product;
+        }
+        document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });
+    });
+    });
+</script>
+</body>
+</html>
